@@ -22,7 +22,7 @@ class AnimalsController < ApplicationController
       render json: animal
     # if the animal is not created return an error
     else
-      render json: animal.errors
+      render json: animal.errors, status: :unprocessable_entity
     end
   end
 

@@ -360,67 +360,32 @@ end
 
 
 
-#### Story: As the consumer of the API, I want to see a validation error if the animals latin name or common name are not unique. (code done, not tests)
+#### Story: As the consumer of the API, I want to see a validation error if the animals latin name or common name are not unique. (done)
+- Add a test to determine if the common_name already exists
+```ruby
+it "must have a unique common_name" do
+  animal_test_one = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+  animal_test_two = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+  expect(animal_test_two.errors[:common_name]).to_not be_empty
+end
+```
 - Add logic to the Animal model class validations *app/models/animal.rb*
 ```
 validates :common_name, presence: true, uniqueness: true
+```
+- Add a test to determine if the latin_name already exists
+```ruby
+it "must have a unique latin_name" do
+  animal_test_one = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+  animal_test_two = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+  expect(animal_test_two.errors[:latin_name]).to_not be_empty
+end
+```
+- Add logic to the Animal model class validations *app/models/animal.rb*
+```ruby
 validates :latin_name, presence: true, uniqueness: true
 ```
-Story: As the consumer, I want to see a status code of 422 when a post request can not be completed because of validation errors.
 
 
 
-
-
-model specs
-
-let(:model){ Drum.create(column: value)}
-it "should be value" do
-  expect(model).to be_valid
-end
-it "should have a column value"
-  model.column = nil
-  expect(model).to_not be_valid
-  expect(model.errors.messages[:column]).to_not be_empty
-end
-
-class Model
-validates :column, presence: true
-<!-- note - 'presence: true' is called an options hash, the same as { :presence => true}, without the curly braces the hash is implici -->
-end
-
-request specs
-
-file name - model.crud.rb
-
-everytime you start an it block the database is empty, you always have to add records in the test
-
-let!(:model){ Model, create column: value}
-
-pass a path and parse the json response
-
-
-
-
- {
- 	"sighting": {
- 		 "date": "2020-01-09T00:10:08.000Z",
- 		 "latitude": 16,
-         "longitude": 3,
-         "animal_id": 1
-    }
-}
-
-
- {
- 	"animal": {
- 	    "common_name": "Monarch Butterfly",
-        "latin_name": "Danaus plexippus",
-        "kingdom": "insect",
-        "sightings_attributes": [{
- 			"date": "2020-01-09T00:10:29.000Z",
- 			"latitude": 16,
-        	"longitude": 23
-        }]
-    }
-}
+#### Story: As the consumer, I want to see a status code of 422 when a post request can not be completed because of validation errors.

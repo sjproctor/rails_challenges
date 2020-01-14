@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Animal", :type => :request do
+  # creates a persistant test variable for specs
+  # let!(:animal){ Animal.create(common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia")}
 
   # validates the model
   it "is valid with valid attributes" do
@@ -42,6 +44,18 @@ RSpec.describe "Animal", :type => :request do
     # expect an error to occur if the common_name and the latin name are the same
     expect(animal_test.errors[:common_name]).to_not be_empty
     expect(animal_test.errors[:latin_name]).to_not be_empty
+  end
+
+  it "must have a unique common_name" do
+    animal_test_one = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+    animal_test_two = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+    expect(animal_test_two.errors[:common_name]).to_not be_empty
+  end
+
+  it "must have a unique latin_name" do
+    animal_test_one = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+    animal_test_two = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
+    expect(animal_test_two.errors[:latin_name]).to_not be_empty
   end
 
 end
