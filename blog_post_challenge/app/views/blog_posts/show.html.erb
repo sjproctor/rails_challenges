@@ -1,0 +1,18 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      <%= comment.content %> by: <%= comment.author_name %>
+    </li>
+  <% end %>
+</ul>
+
+<div>
+  <%= link_to "All Posts", all_posts_path %>
+</div>
+
+<div>
+  <%= link_to "Delete", blog_post_path(@post), method: :delete %>
+</div>
