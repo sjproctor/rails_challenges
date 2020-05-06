@@ -5,10 +5,10 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 
 - Create a new rails app
 ```
-rails new myapp -d postgresql -T
-cd myapp
-rails db:create
-rails server
+$ rails new wildlife_tracker -d postgresql -T
+$ cd wildlife_tracker
+$ rails db:create
+$ rails server
 ```
 In a browser navigate to: `http://localhost:3000` or `127.0.0.1:3000` to view the Rails application
 
@@ -19,7 +19,7 @@ In a browser navigate to: `http://localhost:3000` or `127.0.0.1:3000` to view th
 ### Process
 
 #### Story: As the consumer of the API, I can list all animals in a database. Hint: make a few animals using Rails Console. (done)
-- In terminal: `rails generate resource Animal common_name:string` latin_name:string kingdom:string`
+- In terminal: `rails generate resource Animal common_name:string latin_name:string kingdom:string`
   - This creates the model, controller, view folder, and all the routes
 - `rails db:migrate`
 - `rails c`

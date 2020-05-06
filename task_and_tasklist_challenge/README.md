@@ -4,6 +4,8 @@
 - $ rails new task_and_tasklist_challenge -d postgresql -D
 - $ rails db:create
 
+### Task Challenge
+
 **Story**: As a programmer, I can create a new Task record with a title, which is a string, and description, which is a string.
 - $ rails generate model Task title:string description:title
 - $ rails db:migrate
@@ -57,6 +59,7 @@ end
 
 **Story**: As a programmer, I can set a Task record with a due date, which is a timestamp.
 - $ rails generate migration add_due_date_to_task
+**db/migrate**
 ```
 def change
   add_column :tasks, :due_date, :date
@@ -81,4 +84,40 @@ end
 
 **Story**: As a programmer, I can list all the records without a due date.
 - > Task.where due_date: nil
-- => #<ActiveRecord::Relation [#<Task id: 2, title: "Clean House", description: "Dust ceiling fan and sweep kitchen", created_at: "2020-03-07 01:49:50", updated_at: "2020-03-07 19:41:47", status: "done", due_date: nil>]> 
+- => #<ActiveRecord::Relation [#<Task id: 2, title: "Clean House", description: "Dust ceiling fan and sweep kitchen", created_at: "2020-03-07 01:49:50", updated_at: "2020-03-07 19:41:47", status: "done", due_date: nil>]>
+
+### Tasklist Challenge
+**Story**: As a programmer, I can create a Tasklist that has a title and description.
+- $ rails generate model Tasklist title:string description:string
+- $ rails db:migrate
+
+**Story**: As a programmer, a Tasklists have many Tasks.
+- $ rails generate migration add_foreign_key_to_task
+**app/models/tasklist.rb**
+```
+class Tasklist < ApplicationRecord
+  has_many :tasks
+end
+```
+**app/models/task.rb**
+```
+class Task < ApplicationRecord
+  belongs_to :tasklist
+end
+```
+**db/migrate**
+```
+class AddForeignKeyToTask < ActiveRecord::Migration[6.0]
+  def change
+    add_column :tasks, :tasklist_id, :integer
+  end
+end
+```
+- $ rails db:migrate
+- $ rails c
+- > car = Task.find 3
+- > car
+- => #<Task id: 3, title: "Car", description: "Wash car and get gas", created_at: "2020-03-07 01:50:25", updated_at: "2020-03-08 23:56:54", status: "not done", due_date: "2020-03-10", tasklist_id: nil>
+- > car.tasklist = Tasklist.first
+- > car
+- => #<Task id: 3, title: "Car", description: "Wash car and get gas", created_at: "2020-03-07 01:50:25", updated_at: "2020-03-08 23:56:54", status: "not done", due_date: "2020-03-10", tasklist_id: 1>
