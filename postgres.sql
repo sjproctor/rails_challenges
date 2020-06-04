@@ -53,19 +53,19 @@ SELECT name, surfacearea, population FROM country ORDER BY surfacearea DESC LIMI
 
 -- GROUP BY
 -- Which region has the highest average gnp?
-SELECT region sum(gnp) FROM country GROUP BY region ORDER BY sum - not done
+SELECT region, avg(gnp) AS avggnp FROM country GROUP BY region ORDER BY avggnp DESC LIMIT 1;
 
 -- Who is the most influential head of state measured by population?
-SELECT headofstate, sum(population) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1
+SELECT headofstate, sum(population) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1;
 
 -- Who is the most influential head of state measured by surface area?
-SELECT headofstate, sum(surfacearea) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1
+SELECT headofstate, sum(surfacearea) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1;
 
 -- What are the most common forms of government? (hint: use count(*))
-SELECT governmentform, count(name) FROM country GROUP BY governmentform ORDER BY count DESC LIMIT 5
+SELECT governmentform, count(*) FROM country GROUP BY governmentform ORDER BY count DESC LIMIT 5;
 
 -- What are the forms of government for the top ten countries by surface area?
-WITH top_ten AS SELECT name, surfacearea, governmentform FROM country ORDER BY surfacearea DESC LIMIT 10 SELECT name, governmentform FROM country 
+WITH top_ten AS SELECT name, surfacearea, governmentform FROM country ORDER BY surfacearea DESC LIMIT 10 SELECT name, governmentform FROM country
 
 -- What are the forms of government for the top ten richest nations? (technically most productive)
 -- What are the forms of government for the top ten richest per capita nations? (technically most productive)
@@ -77,6 +77,7 @@ WITH top_ten AS SELECT name, surfacearea, governmentform FROM country ORDER BY s
 SELECT region, count(name) FROM country WHERE region='North America' GROUP BY region
 
 -- Which countries gained their independence before 1963?
+
 -- What is the total population of all continents?
 -- What is the average life expectancy for all continents?
 -- Which countries have the letter ‘z’ in the name? How many?

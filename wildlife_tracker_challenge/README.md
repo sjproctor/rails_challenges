@@ -246,9 +246,9 @@ end
         "latin_name": "Danaus plexippus",
         "kingdom": "insect",
         "sightings_attributes": [{
- 			"date": "2020-01-09T00:10:29.000Z",
- 			"latitude": 16,
-        	"longitude": 23
+ 			     "date": "2020-01-09T00:10:29.000Z",
+ 			     "latitude": 16,
+        	 "longitude": 23
         }]
     }
 }
@@ -261,7 +261,10 @@ end
 #### Note: The remainder of the stories should include the proper RSPEC model and controller specs.
 - To setup testing run `bundle add rspec-rails`
 - If this is added prior to a generate resource command, the appropriate spec file will also be created
-- If this is created after the generate command run `rails generate rspec:install` and `bundle install`
+- If this is created after the generate command run `rails generate rspec:install`
+- this installs a directory called `spec`
+- look at the spec file
+- (maybe)run `bundle install`
 
 
 
@@ -307,7 +310,8 @@ validates :kingdom, presence: true
 ```ruby
 require "rails_helper"
 
-RSpec.describe "Sighting", :type => :request do
+RSpec.describe Sighting, type: :model do
+# RSpec.describe "Sighting", :type => :request do
   it "is valid with valid attributes" do
     animal_test = Animal.create common_name: "Red-winged blackbird", latin_name: "Agelaius phoeniceus", kingdom: "Animalia"
     sighting_test = Sighting.create date: "2020-01-11T00:10:29.000Z", longitude: 34, latitude: 38, animal_id: animal_test.id
@@ -385,7 +389,5 @@ end
 ```ruby
 validates :latin_name, presence: true, uniqueness: true
 ```
-
-
 
 #### Story: As the consumer, I want to see a status code of 422 when a post request can not be completed because of validation errors.
