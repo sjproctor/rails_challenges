@@ -57,6 +57,14 @@ SELECT name, surfacearea, population FROM country ORDER BY population DESC LIMIT
 SELECT name, surfacearea, population FROM country ORDER BY surfacearea DESC LIMIT 1;
 
 
+-- Subqueries: WITH
+
+-- What are the forms of government for the top ten countries by surface area? (HINT: Number 10 is Kazakstan)
+WITH top_ten AS (SELECT name, surfacearea, governmentform FROM country ORDER BY surfacearea DESC LIMIT 10) SELECT name, governmentform FROM top_ten;
+
+-- What are the forms of government for the top ten richest nations? (technically most productive)
+WITH top_ten AS (SELECT name, gnp, governmentform FROM country ORDER BY gnp DESC LIMIT 10) SELECT name, governmentform FROM top_ten
+
 
 -- Aggregate Functions: GROUP BY
 -- Which region has the highest average gnp? (HINT: North America)
@@ -79,16 +87,6 @@ SELECT region, count(name) FROM country WHERE region='North America' GROUP BY re
 
 -- What is the total population of all continents?
 SELECT continent, sum(population) FROM country GROUP BY continent
-
--- Aggregate Functions: WITH
-
--- What are the forms of government for the top ten countries by surface area? (HINT: Number 10 is Kazakstan)
-WITH top_ten AS (SELECT name, surfacearea, governmentform FROM country ORDER BY surfacearea DESC LIMIT 10) SELECT name, governmentform FROM top_ten;
-
--- What are the forms of government for the top ten richest nations? (technically most productive)
-WITH top_ten AS (SELECT name, gnp, governmentform FROM country ORDER BY gnp DESC LIMIT 10) SELECT name, governmentform FROM top_ten
-
-
 
 
 -- Stretch Challenges
