@@ -49,13 +49,12 @@ SELECT name, surfacearea, population FROM country WHERE population != 0 ORDER BY
 -- population
 SELECT name, surfacearea, population FROM country WHERE population != 0 ORDER BY population LIMIT 1;
 
--- Which is the biggest country, by area and population (first by area - 9.5729e+06, then by population - 146934000)?
+-- Which is the biggest country, by area and population (first by area - 1.70754e+07, then by population - 1277558000)?
 -- area
-SELECT name, surfacearea, population FROM country ORDER BY population DESC LIMIT 1;
-
--- population
 SELECT name, surfacearea, population FROM country ORDER BY surfacearea DESC LIMIT 1;
 
+-- population
+SELECT name, surfacearea, population FROM country ORDER BY population DESC LIMIT 1;
 
 -- Subqueries: WITH
 

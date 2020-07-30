@@ -42,5 +42,5 @@
 - Add five or more family members to the persons table.
 How many have the same last_name as you? (Look up the information using ActiveRecord queries)
 Add yourself into the persons table.
-Update all family members with the same last_name as you,to have the same phone number as you.
+Update all family members with the same last_name as you to have the same phone number as you.
 Delete all family members not with your last_name.
