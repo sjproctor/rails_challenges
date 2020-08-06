@@ -8,6 +8,8 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 $ rails new wildlife_tracker -d postgresql -T
 $ cd wildlife_tracker
 $ rails db:create
+$ bundle add rspec-rails
+$ rails generate rspec:install
 $ rails server
 ```
 In a browser navigate to: `http://localhost:3000` or `127.0.0.1:3000` to view the Rails application
