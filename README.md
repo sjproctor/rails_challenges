@@ -1,13 +1,13 @@
 # Unit 5 and 6: Ruby on Rails Challenges
 
-**Challenges for Rails at LEARN Academy, San Diego**
-Each section has individual user stories for the project.
+**Challenges for Rails at LEARN Academy, San Diego**  
+Each section has individual user stories for the project.  
 WIP: Always updating and evolving, striving to be better.
 
 - [ Intro to PostgreSQL ](./postgres.sql)
 - [ Intro to Active Record ](./active-record-intro.md)
 - [ Active Record Migrations ](./active-record-migrations.md)
-- [ Active Record Associations ]
+- [ Active Record Associations ](./active-record-associations.md)
 - [ Active Record Validations ]
 - [ Task and Tasklist Challenge ]
 - [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)

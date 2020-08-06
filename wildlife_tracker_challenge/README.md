@@ -42,7 +42,7 @@ end
 
 
 
-#### Story: As the consumer of the API, I can create an animal and save it in the database. (done)
+#### Story: As the consumer of the API, I can create an animal and save it in the database. An animal has the following information: common_name, latin_name, kingdom. (done)
 - Add a `create` method to *animals_controller.rb*
 ```ruby
 def create
@@ -63,11 +63,11 @@ end
 - Enter a JSON object for a new animal
 ```
 {
- 	"animal": {
-  	"common_name": "Mongoose",
-  	"latin_name": "Herpestidae",
-  	"kingdom": "mammal"
-    }
+  "animal": {
+    "common_name": "Mongoose",
+    "latin_name": "Herpestidae",
+    "kingdom": "mammal"
+  }
 }
 ```
 - Create a `post` request for `localhost:3000/animals` and see the JSON response of the newly created animal
@@ -267,7 +267,7 @@ end
 - this installs a directory called `spec`
 - look at the spec file
 - (maybe)run `bundle install`
-
+- Troubleshooting: from the project-level, run `bundle exec rspec`, or `rspec spec/models/animal_spec.rb` rather than running RSpec inside the spec or model file.
 
 
 #### Story: As the consumer of the API, I want to see validation errors if an animal doesn't include a common name, or a latin name. (done)
@@ -298,9 +298,9 @@ validates :kingdom, presence: true
 - In Postman create a `post` request for `localhost:3000/animals` without a common_name entry and see a validation error
 ```
 {
-    "common_name": [
-        "can't be blank"
-    ]
+  "common_name": [
+    "can't be blank"
+  ]
 }
 ```
 
@@ -337,9 +337,9 @@ validates :latitude, presence: true
 - In Postman create a `post` request for `localhost:3000/animals` without a longitude entry and see a validation error
 ```
 {
-    "sightings.longitude": [
-        "can't be blank"
-    ]
+  "sightings.longitude": [
+    "can't be blank"
+  ]
 }
 ```
 
