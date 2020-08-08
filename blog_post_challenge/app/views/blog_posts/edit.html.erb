@@ -1,6 +1,6 @@
-<h1>Add a Blog Post</h1>
+<h1>Edit a Blog Post</h1>
 
-<%= form_with url: "/blog_posts", local: true do |form| %>
+<%= form_with url: "/blog_posts/#{params[:id]}", method: "patch", local: true do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -11,5 +11,5 @@
   <%= form.label :publish_date %>
   <%= form.date_field :publish_date %>
 
-  <%= form.submit :create %>
+  <%= form.submit :update %>
 <% end %>

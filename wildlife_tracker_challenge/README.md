@@ -164,9 +164,9 @@ end
 - Enter a JSON object for a new sighting
 ```
 {
- 	"sighting": {
- 	  "date": "2020-01-09T00:10:08.000Z",
- 	  "latitude": 16,
+  "sighting": {
+    "date": "2020-01-09T00:10:08.000Z",
+    "latitude": 16,
     "longitude": 3,
     "animal_id": 1
   }
@@ -243,16 +243,16 @@ end
 - Enter a JSON object for a new animal with a sighting
 ```
  {
- 	"animal": {
- 	    "common_name": "Monarch Butterfly",
-        "latin_name": "Danaus plexippus",
-        "kingdom": "insect",
-        "sightings_attributes": [{
- 			     "date": "2020-01-09T00:10:29.000Z",
- 			     "latitude": 16,
-        	 "longitude": 23
-        }]
-    }
+  "animal": {
+    "common_name": "Monarch Butterfly",
+    "latin_name": "Danaus plexippus",
+    "kingdom": "insect",
+    "sightings_attributes": [{
+      "date": "2020-01-09T00:10:29.000Z",
+      "latitude": 16,
+      "longitude": 23
+    }]
+  }
 }
 ```
 - In Postman create a `post` request for `localhost:3000/animals` and see the JSON of the newly created animal
