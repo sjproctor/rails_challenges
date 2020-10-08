@@ -214,7 +214,7 @@ end
 ```ruby
 def show
     animal = Animal.find(params[:id])
-    render json: animal.to_json(include: :sightings)
+    render json: animal, include: :sightings
 end
 ```
 - Create a `show` request for `localhost:3000/animals/1` (the id must match an existing animal in the database) and the JSON response of the one animal and multiple sightings
