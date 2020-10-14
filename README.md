@@ -13,9 +13,8 @@ WIP: Always updating and evolving, striving to be better.
 - [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
 - [ Rails Routes, Controllers, and Views]
 - [ Rails Params ]
-- [ Rails Forms ]
-- [ Rails Strong Params ]
-- [ Wildlife Tracker ](./wildlife_tracker_challenge/README.md)
+- [ Blog Post Challenge ]
+- [ Wildlife Tracker ](./wildlife_tracker/README.md)
 
 
 ## Ruby on Rails Set Up
