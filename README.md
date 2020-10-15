@@ -13,7 +13,7 @@ WIP: Always updating and evolving, striving to be better.
 - [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
 - [ Rails Routes, Controllers, and Views]
 - [ Rails Params ]
-- [ Blog Post Challenge ]
+- [ Rails Full-stack and Strong Params ]
 - [ Wildlife Tracker ](./wildlife_tracker/README.md)
 
 

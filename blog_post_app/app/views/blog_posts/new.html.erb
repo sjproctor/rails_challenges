@@ -1,0 +1,17 @@
+<h3>Add a New Blog Post</h3>
+<%= form_with url: '/blog_posts', local: true do |form| %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <br />
+  <%= form.label :content %>
+  <%= form.text_field :content %>
+
+  <br />
+  <%= form.submit 'Add Blog Post' %>
+  <%= form.submit 'Clear Form', :type => 'reset' %>
+<% end %>
+
+<br />
+<%= link_to "Back to All Posts", posts_path %>

@@ -1,0 +1,11 @@
+<h1>Women in Programming</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post_path(post) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a New Post", new_post_path %>

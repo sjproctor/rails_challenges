@@ -1,0 +1,14 @@
+<h3>Edit Blog Post</h3>
+<%= form_with url: "/blog_posts/#{params[:id]}", method: :patch, local: true do |form| %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <br />
+  <%= form.label :content %>
+  <%= form.text_field :content %>
+
+  <br />
+  <%= form.submit 'Edit Blog Post' %>
+  <%= form.submit 'Clear Form', :type => 'reset' %>
+<% end %>

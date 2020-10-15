@@ -22,11 +22,11 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can list all the animals in a database. An animal has the following information: common name, latin name, kingdom (mammal, insect). Hint: Make a few animals using Rails Console (done)
-- In terminal: `rails generate resource Animal common_name:string latin_name:string kingdom:string`
+#### Story: As the consumer of the API, I can list all the animals in a database. An animal has the following information: common name, latin name, kingdom (mammal, insect). Hint: Make a few animals using Rails Console
+- In terminal: `$ rails generate resource Animal common_name:string latin_name:string kingdom:string`
   - This creates the model, controller, view folder, and all the routes
-  - Remove the views: `rm -rf app/views/animals`
-  - Remove the stylesheet: `rm app/assets/stylesheets/animals.scss`
+  - Remove the views: `$ rm -rf app/views/animals`
+  - Remove the stylesheet: `$ rm app/assets/stylesheets/animals.scss`
 - `rails db:migrate`
 - `rails c`
 - Add some content to the database:
@@ -46,7 +46,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can create an animal and save it in the database. (done)
+#### Story: As the consumer of the API, I can create an animal and save it in the database.
 - Add a `create` method to *animals_controller.rb*
 
 ```ruby
@@ -82,7 +82,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can update an animal in the database. (done)
+#### Story: As the consumer of the API, I can update an animal in the database.
 - Add an `update` method to *animals_controller.rb*
 
 ```ruby
@@ -112,7 +112,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can remove an animal from the database. (done)
+#### Story: As the consumer of the API, I can remove an animal from the database.
 - Add a `destroy` method to *animals_controller.rb*
 
 ```ruby
@@ -129,7 +129,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API I can create a sighting of an animal with date (use the datetime datatype), latitude and longitude. Hint: An animal has_many sightings. (rails g resource Sighting animal_id:integer ...) (done)
+#### Story: As the consumer of the API I can create a sighting of an animal with date (use the datetime datatype), latitude and longitude. Hint: An animal has_many sightings. (rails g resource Sighting animal_id:integer ...)
 
 - Sightings is a new table that will need to be created in the database
 - `rails generate resource Sighting date:datetime latitude:integer longitude:integer animal_id:integer`
@@ -196,7 +196,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can update an animal sighting in the database. (done)
+#### Story: As the consumer of the API, I can update an animal sighting in the database.
 - Add an `update` method to *sightings_controller.rb*
 
 ```ruby
@@ -216,7 +216,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can remove an animal sighting from the database. (done)
+#### Story: As the consumer of the API, I can remove an animal sighting from the database.
 - Add a `destroy` method to *sightings_controller.rb*
 
 ```ruby
@@ -235,7 +235,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, when I view a specific animal, I can also see a list sightings of that animal. (done)
+#### Story: As the consumer of the API, when I view a specific animal, I can also see a list sightings of that animal.
 
 - Add a `show` method to *animals_controller.rb*
 
@@ -252,7 +252,7 @@ $ rails server
 
 
 
-#### Story: As the consumer of the API, I can run a report to list all sightings during a given time period. Remember to add the start_date and end_date to what is permitted in your strong parameters method. Hint: Your controller can look something like this: (done)
+#### Story: As the consumer of the API, I can run a report to list all sightings during a given time period. Remember to add the start_date and end_date to what is permitted in your strong parameters method. Hint: Your controller can look something like this:
 
 ```ruby
 class SightingsController < ApplicationController
@@ -274,7 +274,7 @@ end
 ## Stretch Challenges
 Note: All of these stories should include the proper RSpec model specs, and the controllers should be tested using Controller specs.
 
-#### Story: As the consumer of the API, I want to see validation errors if an animal doesn't include a common name, latin name, or kingdom. (done)
+#### Story: As the consumer of the API, I want to see validation errors if an animal doesn't include a common name, latin name, or kingdom.
 - Add tests to validate the existence of the model and each column
 
 ```ruby
@@ -331,7 +331,7 @@ Note: All of these stories should include the proper RSpec model specs, and the 
 
 
 
-#### Story: As the consumer of the API, I want to see validation errors if a sighting doesn't include: latitude, longitude, or a date. (done)
+#### Story: As the consumer of the API, I want to see validation errors if a sighting doesn't include: latitude, longitude, or a date.
 - Add tests to validate the existence of the model and each column
 
 ```ruby
@@ -379,7 +379,7 @@ validates :latitude, presence: true
 
 
 
-#### Story: As the consumer of the API, I want to see a validation error if the animals latin name matches exactly the common name. (done)
+#### Story: As the consumer of the API, I want to see a validation error if the animals latin name matches exactly the common name.
 - Add a test to check if the common_name and the latin_name are the same
 
 ```ruby
@@ -408,7 +408,7 @@ end
 
 
 
-#### Story: As the consumer of the API, I want to see a validation error if the animals latin name or common name are not unique. (done)
+#### Story: As the consumer of the API, I want to see a validation error if the animals latin name or common name are not unique.
 - Add a test to determine if the common_name already exists
 
 ```ruby
@@ -446,7 +446,7 @@ validates :latin_name, presence: true, uniqueness: true
 
 
 
-#### Story: As the consumer, I want to see a status code of 422 when a post request can not be completed because of validation errors. (done)
+#### Story: As the consumer, I want to see a status code of 422 when a post request can not be completed because of validation errors.
 - Add a request spec for each validation case
 
 ```ruby
@@ -486,7 +486,7 @@ end
 
 
 ## Super Stretch Challenge
-#### Story: As the consumer of the API, I can submit sighting data along with new animals in 1 api call. Hint: Look into accepts_nested_attributes_for (done)
+#### Story: As the consumer of the API, I can submit sighting data along with new animals in 1 api call. Hint: Look into accepts_nested_attributes_for
 - Add `accepts_nested_attributes_for :sightings` to *model/animal.rb*
 - Add sightings_attributes to the animal_params method
 
