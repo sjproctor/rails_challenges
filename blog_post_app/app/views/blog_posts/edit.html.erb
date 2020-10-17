@@ -1,5 +1,5 @@
 <h3>Edit Blog Post</h3>
-<%= form_with url: "/blog_posts/#{params[:id]}", method: :patch, local: true do |form| %>
+<%= form_with model: @post, method: :patch, local: true do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -12,3 +12,5 @@
   <%= form.submit 'Edit Blog Post' %>
   <%= form.submit 'Clear Form', :type => 'reset' %>
 <% end %>
+
+<%= link_to "Back to All Posts", blog_posts_path %>

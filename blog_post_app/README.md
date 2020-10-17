@@ -289,3 +289,96 @@ achine-independent proramming languages."`
 **Routes**
 - Add a route `get 'blog_posts/:id/edit' => 'blog_posts#edit', as: 'edit_post'`
 - Add a route `patch 'blog_posts/:id' => 'blog_posts#update'`
+
+
+
+## Blog Post Challenge, cont.
+Expand on the Blog Post challenge to add strong params and validations.
+
+#### As a developer, I can ensure that my create method will only allow the attributes I expect. (done)
+**Controller**
+- Update the new method to have an instance variable that will connect the model to the form
+- Create a strong params method in *app/controllers/blog_posts_controller.rb*
+- Pass the `blog_post_params` method to the create method
+
+```ruby
+  def new
+    @post = BlogPost.new
+  end
+
+  def create
+    @post = BlogPost.create(blog_post_params)
+    if @post.valid?
+      redirect_to posts_path
+    else
+      redirect_to new_post_path
+    end
+  end
+
+  private
+  def blog_post_params
+    params.require(:blog_post).permit(:title, :content)
+  end
+```
+
+**View**
+- Update the `form_with` to accept the model rather than the url `<%= form_with model: @post, local: true do |form| %>`
+
+
+
+#### As a developer, I can ensure that all blog posts have titles and content for each post. (done)
+
+- Add validations to *app/models/blog_post.rb*
+
+```ruby
+  validates :title, presence: true
+  validates :content, presence: true
+```
+
+
+
+#### As a developer, I can ensure that all blog post titles are unique.
+- Update validation in *app/models/blog_post.rb*
+
+```ruby
+  validates :title, presence: true, uniqueness: true
+  validates :content, presence: true
+```
+
+
+
+#### As a developer, I can ensure that blog post titles are at least 10 characters.
+- Update validation in *app/models/blog_post.rb*
+
+```ruby
+  validates :title, presence: true, uniqueness: true, length: { minimum: 10 }
+  validates :content, presence: true
+```
+
+
+
+## Stretch Challenges
+#### As a developer, I can ensure that my edit method will only allow the attributes I expect.
+**Controller**
+- Update the edit method to have an instance variable that will connect the model to the form
+- Create a strong params method in *app/controllers/blog_posts_controller.rb*
+- Pass the `blog_post_params` method to the update method
+
+```ruby
+  def edit
+    @post = BlogPost.find(params[:id])
+  end
+
+  def update
+    @post = BlogPost.find(params[:id])
+    @post.update(blog_post_params)
+    if @post.valid?
+      redirect_to post_path(@post)
+    else
+      redirect_to edit_post_path
+    end
+  end
+```
+
+**View**
+- Update the `form_with` to accept the model rather than the url `<%= form_with model: @post, method: :patch, local: true do |form| %>`

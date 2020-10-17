@@ -9,13 +9,23 @@ class BlogPostsController < ApplicationController
   end
 
   def new
+    @post = BlogPost.new
   end
 
+  # def create
+  #   @post = BlogPost.create(
+  #     title: params[:title],
+  #     content: params[:content]
+  #   )
+  #   if @post.valid?
+  #     redirect_to posts_path
+  #   else
+  #     redirect_to new_post_path
+  #   end
+  # end
+
   def create
-    @post = BlogPost.create(
-      title: params[:title],
-      content: params[:content]
-    )
+    @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to posts_path
     else
@@ -33,19 +43,35 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
+    @post = BlogPost.find(params[:id])
   end
+
+  # def update
+  #   @post = BlogPost.find(params[:id])
+  #   @post.update(
+  #     title: params[:title],
+  #     content: params[:content]
+  #   )
+  #   if @post.valid?
+  #     redirect_to post_path(@post)
+  #   else
+  #     redirect_to edit_post_path
+  #   end
+  # end
 
   def update
     @post = BlogPost.find(params[:id])
-    @post.update(
-      title: params[:title],
-      content: params[:content]
-    )
+    @post.update(blog_post_params)
     if @post.valid?
       redirect_to post_path(@post)
     else
-      redirect_to edit_post_path
+      redirect_to posts_path
     end
+  end
+
+  private
+  def blog_post_params
+    params.require(:blog_post).permit(:title, :content)
   end
 
 end
