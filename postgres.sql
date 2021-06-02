@@ -58,12 +58,11 @@ SELECT name, surfacearea, population FROM country ORDER BY population DESC LIMIT
 
 -- Subqueries: WITH
 
--- What are the forms of government for the top ten countries by surface area? (HINT: Number 10 is Kazakstan)
-WITH top_ten AS (SELECT name, surfacearea, governmentform FROM country ORDER BY surfacearea DESC LIMIT 10) SELECT name, governmentform FROM top_ten;
+-- Of the countries with the top 10 gnp, which has the smallest population? (HINT: Canada)
+WITH top_ten AS (SELECT name, gnp, population FROM country ORDER BY gnp DESC LIMIT 10) SELECT * FROM top_ten;
 
--- What are the forms of government for the top ten richest nations? (technically most productive)
-WITH top_ten AS (SELECT name, gnp, governmentform FROM country ORDER BY gnp DESC LIMIT 10) SELECT name, governmentform FROM top_ten
-
+-- Of the 10 least populated countries with permament residents (a non-zero population), which has the largest surfacearea? (HINT: Svalbard and Jan Mayen)
+WITH smallest_population AS (SELECT name, population, surfacearea FROM country  WHERE population > 0 ORDER BY population  LIMIT 10) SELECT * FROM smallest_population ORDER BY surfacearea DESC LIMIT 1;
 
 -- Aggregate Functions: GROUP BY
 -- Which region has the highest average gnp? (HINT: North America)
