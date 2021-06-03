@@ -50,7 +50,7 @@ Created database 'rolodex_test'
 ```
 
 - Retrieve the first_name of the third Person in the database.  
-`Person.find(3)`
+`Person.find(3).first_name`
 
 ### Stretch Challenges
 - Update all the family members with the same last_name as you, to have the same phone number as you.  
