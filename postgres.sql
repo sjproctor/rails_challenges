@@ -56,6 +56,9 @@ SELECT name, surfacearea, population FROM country ORDER BY surfacearea DESC LIMI
 -- population
 SELECT name, surfacearea, population FROM country ORDER BY population DESC LIMIT 1;
 
+-- Who is the most influential head of state measured by population? (HINT: Jiang Zemin)
+SELECT headofstate, population FROM country ORDER BY population DESC LIMIT 1;
+
 -- Subqueries: WITH
 
 -- Of the countries with the top 10 gnp, which has the smallest population? (HINT: Canada)
@@ -67,9 +70,6 @@ WITH smallest_population AS (SELECT name, population, surfacearea FROM country  
 -- Aggregate Functions: GROUP BY
 -- Which region has the highest average gnp? (HINT: North America)
 SELECT region, avg(gnp) AS avggnp FROM country GROUP BY region ORDER BY avggnp DESC LIMIT 1;
-
--- Who is the most influential head of state measured by population? (HINT: Jiang Zemin)
-SELECT headofstate, sum(population) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1;
 
 -- Who is the most influential head of state measured by surface area? (HINT: Elisabeth II)
 SELECT headofstate, sum(surfacearea) FROM country GROUP BY headofstate ORDER BY sum DESC LIMIT 1;
