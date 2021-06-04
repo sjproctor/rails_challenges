@@ -22,10 +22,11 @@ $ `rails c`
   > Movie.create title: "Beauty and the Beast", category: "Stockholm Syndrome"
   > Movie.create title: "Mulan", category: "Nobody puts baby in a corner"
   > Movie.create title: "Lion King", category: "Hamlet, revisited"
-```
+  ```
 
 - Create a migration to add a new column to the database called movie_length  
 $ `rails generate migration add_movie_length`
+
   ```ruby
   class AddMovieLength < ActiveRecord::Migration[6.0]
     def change
