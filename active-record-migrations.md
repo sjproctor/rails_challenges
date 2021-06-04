@@ -29,7 +29,7 @@ $ `rails generate migration add_movie_length`
 ```ruby
 class AddMovieLength < ActiveRecord::Migration[6.0]
   def change
-    add_column :movie, :movie_length, :string
+    add_column :movies, :movie_length, :string
   end
 end
 ```
@@ -63,7 +63,7 @@ $ `rails generate migration update_category_name`
 ```ruby
 class UpdateCategoryName < ActiveRecord::Migration[6.0]
   def change
-    rename_column :movie, :category, :genre
+    rename_column :movies, :category, :genre
   end
 end
 ```
