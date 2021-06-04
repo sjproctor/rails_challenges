@@ -9,7 +9,8 @@
 `$ rails db:create`
 
 - Generate a Movie model with a title attribute and a category attribute  
-`$ rails generate model Movie title:string category:string`
+`$ rails generate model Movie title:string category:string`  
+`$ rails db:migrate`
 
 ### Challenges
 - Add five entries to the database in Rails console
