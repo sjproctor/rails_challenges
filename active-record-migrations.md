@@ -16,12 +16,12 @@ $ `rails db:migrate`
 - Add five entries to the database in Rails console  
 $ `rails c`
 
-```
-> Movie.create title: "Little Mermaid", category: "Mysteries of the Sea"
-> Movie.create title: "Aladdin", category: "Defying Physics"
-> Movie.create title: "Beauty and the Beast", category: "Stockholm Syndrome"
-> Movie.create title: "Mulan", category: "Nobody puts baby in a corner"
-> Movie.create title: "Lion King", category: "Hamlet, revisited"
+  ```
+  > Movie.create title: "Little Mermaid", category: "Mysteries of the Sea"
+  > Movie.create title: "Aladdin", category: "Defying Physics"
+  > Movie.create title: "Beauty and the Beast", category: "Stockholm Syndrome"
+  > Movie.create title: "Mulan", category: "Nobody puts baby in a corner"
+  > Movie.create title: "Lion King", category: "Hamlet, revisited"
 ```
 
 - Create a migration to add a new column to the database called movie_length  
