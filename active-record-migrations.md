@@ -40,24 +40,19 @@ $ `rails c`
 
 ```
 > lm = Movie.find(1)
-> lm.movie_length = "1h 25m"
-> lm.save
+> lm.update movie_length: "1h 25m"
 >
 > al = Movie.find(2)
-> al.movie_length = "2h 8m"
-> al.save
+> al.update movie_length: "2h 8m"
 >
 > bb = Movie.find(3)
-> bb.movie_length = "2h 19m"
-> bb.save
+> bb.update movie_length: "2h 19m"
 >
 > mu = Movie.find(4)
-> mu.movie_length = "1h 28m"
-> mu.save
+> mu.update movie_length: "1h 28m"
 >
 > lk = Movie.find(5)
-> lk.movie_length = "1h 58m"
-> lk.save
+> lk.update movie_length: "1h 58m"
 ```
 
 - Generate a migration to rename the column 'category' to 'genre'  
