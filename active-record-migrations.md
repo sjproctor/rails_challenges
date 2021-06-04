@@ -26,42 +26,42 @@ $ `rails c`
 
 - Create a migration to add a new column to the database called movie_length  
 $ `rails generate migration add_movie_length`
-```ruby
-class AddMovieLength < ActiveRecord::Migration[6.0]
-  def change
-    add_column :movies, :movie_length, :string
+  ```ruby
+  class AddMovieLength < ActiveRecord::Migration[6.0]
+    def change
+      add_column :movies, :movie_length, :string
+    end
   end
-end
-```
-$ `rails db:migrate`
+  ```
+  $ `rails db:migrate`
 
 - Update the values of the existing attributes to include a movie_length value  
 $ `rails c`
 
-```
-> lm = Movie.find(1)
-> lm.update movie_length: "1h 25m"
->
-> al = Movie.find(2)
-> al.update movie_length: "2h 8m"
->
-> bb = Movie.find(3)
-> bb.update movie_length: "2h 19m"
->
-> mu = Movie.find(4)
-> mu.update movie_length: "1h 28m"
->
-> lk = Movie.find(5)
-> lk.update movie_length: "1h 58m"
-```
+  ```
+  > lm = Movie.find(1)
+  > lm.update movie_length: "1h 25m"
+  >
+  > al = Movie.find(2)
+  > al.update movie_length: "2h 8m"
+  >
+  > bb = Movie.find(3)
+  > bb.update movie_length: "2h 19m"
+  >
+  > mu = Movie.find(4)
+  > mu.update movie_length: "1h 28m"
+  >
+  > lk = Movie.find(5)
+  > lk.update movie_length: "1h 58m"
+  ```
 
 - Generate a migration to rename the column 'category' to 'genre'  
 $ `rails generate migration update_category_name`
-```ruby
-class UpdateCategoryName < ActiveRecord::Migration[6.0]
-  def change
-    rename_column :movies, :category, :genre
+  ```ruby
+  class UpdateCategoryName < ActiveRecord::Migration[6.0]
+    def change
+      rename_column :movies, :category, :genre
+    end
   end
-end
-```
-$ `rails db:migrate`
+  ```
+  $ `rails db:migrate`
