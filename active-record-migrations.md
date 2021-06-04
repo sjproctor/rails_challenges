@@ -13,7 +13,7 @@ $ `rails generate model Movie title:string category:string`
 $ `rails db:migrate`
 
 ### Challenges
-- Add five entries to the database in Rails console
+- Add five entries to the database in Rails console  
 $ `rails c`
 
 ```
