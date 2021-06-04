@@ -2,18 +2,20 @@
 
 ### Setup
 - Create a new rails application called 'favorite_movies'  
-`$ rails new favorite_movies -d postgresql -T`  
-`$ cd favorite_movies`
+$ `rails new favorite_movies -d postgresql -T`  
+$ `cd favorite_movies`
 
 - Create the database  
-`$ rails db:create`
+$ `rails db:create`
 
 - Generate a Movie model with a title attribute and a category attribute  
-`$ rails generate model Movie title:string category:string`  
-`$ rails db:migrate`
+$ `rails generate model Movie title:string category:string`  
+$ `rails db:migrate`
 
 ### Challenges
 - Add five entries to the database in Rails console
+$ `rails c`
+
 ```
 > Movie.create title: "Little Mermaid", category: "Mysteries of the Sea"
 > Movie.create title: "Aladdin", category: "Defying Physics"
@@ -23,7 +25,7 @@
 ```
 
 - Create a migration to add a new column to the database called movie_length  
-`$ rails generate migration add_movie_length`
+$ `rails generate migration add_movie_length`
 ```ruby
 class AddMovieLength < ActiveRecord::Migration[6.0]
   def change
@@ -31,7 +33,7 @@ class AddMovieLength < ActiveRecord::Migration[6.0]
   end
 end
 ```
-`$ rails db:migrate`
+$ `rails db:migrate`
 
 - Update the values of the existing attributes to include a movie_length value
 ```
@@ -57,7 +59,7 @@ end
 ```
 
 - Generate a migration to rename the column 'category' to 'genre'  
-`$ rails generate migration update_category_name`
+$ `rails generate migration update_category_name`
 ```ruby
 class UpdateCategoryName < ActiveRecord::Migration[6.0]
   def change
@@ -65,4 +67,4 @@ class UpdateCategoryName < ActiveRecord::Migration[6.0]
   end
 end
 ```
-`$ rails db:migrate`
+$ `rails db:migrate`
