@@ -1,4 +1,5 @@
 # Active Record Migrations
+Updated: 6/4/2021
 
 ### Setup
 - Create a new rails application called 'favorite_movies'  
