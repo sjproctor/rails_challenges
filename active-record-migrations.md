@@ -2,8 +2,8 @@
 
 ### Setup
 - Create a new rails application called 'favorite_movies'  
-`$ rails new rolodex -d postgresql -T`
-`$ cd rolodex`
+`$ rails new favorite_movies -d postgresql -T`  
+`$ cd favorite_movies`
 
 - Create the database  
 `$ rails db:create`
