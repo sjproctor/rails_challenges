@@ -35,7 +35,9 @@ end
 ```
 $ `rails db:migrate`
 
-- Update the values of the existing attributes to include a movie_length value
+- Update the values of the existing attributes to include a movie_length value  
+$ `rails c`
+
 ```
 > lm = Movie.find(1)
 > lm.movie_length = "1h 25m"
