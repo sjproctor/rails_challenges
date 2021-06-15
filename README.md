@@ -12,9 +12,9 @@ WIP: Always updating and evolving, striving to be better.
 - [ Rails Routes, Controllers, and Views](./routes_controllers_views/README.md)
 - [ Rails Params ](./params/README.md)
 - [ Rails Full-stack and Strong Params ](./blog_post_app/README.md)
-- [ Task and Tasklist Challenge ](./blog_post_app/README.md)
 - [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
 - [ Wildlife Tracker ](./wildlife-tracker.md)
+- [ Task and Tasklist Challenge ](./blog_post_app/README.md)
 
 
 ## Ruby on Rails Set Up
