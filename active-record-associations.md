@@ -1,4 +1,5 @@
-# Active Record Associations: Banking Challenge
+# Active Record Associations Challenge
+Updated: June 2021
 
 ### Setup
 - Create a new rails application and database
@@ -81,20 +82,16 @@ end
 ```
 ```
 > bb = CreditCard.first
-> bb.credit_limit = 5000
-> bb.save
+> bb.update(5000)
 >
 > fl = CreditCard.find 2
-> fl.credit_limit = 10000
-> fl.save
+> fl.update(10000)
 >
 > bb = CreditCard.find 4
-> bb.credit_limit = 25000
-> bb.save
+> bb.update(25000)
 >
 > bb = CreditCard.find 5
-> bb.credit_limit = 10000
-> bb.save
+> bb.update(10000)
 ```
 
 - Find the total credit extended to the owner with multiple credit cards

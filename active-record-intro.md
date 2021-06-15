@@ -1,4 +1,4 @@
-# Intro to Active Record
+# Intro to Active Record Challenge
 
 Create, Update, Insert, Delete with Active Record in the Rails console.
 

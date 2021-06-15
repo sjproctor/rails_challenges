@@ -11,7 +11,7 @@ WIP: Always updating and evolving, striving to be better.
 - [ Active Record Validations ](./active-record-validations-and-model-specs.md)
 - [ Task and Tasklist Challenge ]
 - [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
-- [ Rails Routes, Controllers, and Views]
+- [ Rails Routes, Controllers, and Views](./routes_controllers_views/README.md)
 - [ Rails Params ]
 - [ Rails Full-stack and Strong Params ](./blog_post_app/README.md)
 - [ Wildlife Tracker ](./wildlife-tracker.md)

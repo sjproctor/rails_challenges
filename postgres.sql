@@ -1,4 +1,6 @@
--- Intro to PostgreSQL
+-- Intro to PostgreSQL Query Challenge
+-- Updated: June 2021
+
 SELECT * FROM country;
 code, name, continent, region, surfacearea, indepyear, population, lifeexpectancy, gnp, gnpold, localname, governmentform, headofstate, capital, code2
 -- Challenges: SQL Country Database

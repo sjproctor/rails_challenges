@@ -1,4 +1,6 @@
 # Wildlife Tracker Challenge
+Updated: June 2021
+
 The Forest Service is considering a proposal to place in conservancy a forest of virgin Douglas fir just outside of Portland. Before they give the go-ahead, they need to do an environmental impact study. They've asked you to build an app so that the rangers can report wildlife sightings.
 
 #### Rails App

@@ -1,4 +1,4 @@
-# Active Record Validations and Model Specs
+# Active Record Validations and Model Specs Challenge
 Updated: June 2021
 
 ### Setup

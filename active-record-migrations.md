@@ -1,4 +1,4 @@
-# Active Record Migrations
+# Active Record Migrations Challenge
 Updated: 6/4/2021
 
 ### Setup
