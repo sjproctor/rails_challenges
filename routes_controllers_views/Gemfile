@@ -8,7 +8,11 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
+<<<<<<< HEAD:routes_controllers_views/Gemfile
 gem 'puma', '~> 5.0'
+=======
+gem 'puma', '~> 4.3'
+>>>>>>> f732b5bf70a69f8c0f62b10ca6a084d0309b2347:model_view_controller_params_challenge/Gemfile
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
