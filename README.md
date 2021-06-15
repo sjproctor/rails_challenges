@@ -8,17 +8,17 @@ WIP: Always updating and evolving, striving to be better.
 - [ Intro to Active Record ](./active-record-intro.md)
 - [ Active Record Migrations ](./active-record-migrations.md)
 - [ Active Record Associations ](./active-record-associations.md)
-- [ Active Record Validations ](./active-record-validations-and-model-specs.md)
-- [ Task and Tasklist Challenge ]
-- [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
+- [ Active Record Validations and Model Specs ](./active-record-validations-and-model-specs.md)
 - [ Rails Routes, Controllers, and Views](./routes_controllers_views/README.md)
-- [ Rails Params ]
+- [ Rails Params ](./params/README.md)
 - [ Rails Full-stack and Strong Params ](./blog_post_app/README.md)
+- [ Task and Tasklist Challenge ](./blog_post_app/README.md)
+- [ Active Record Query Syntax Spec Challenge ](./country-rspec.md)
 - [ Wildlife Tracker ](./wildlife-tracker.md)
 
 
 ## Ruby on Rails Set Up
-- `$ rails new app_name -d postgresql -T`
+- $ `rails new app_name -d postgresql -T`
 - cd into the project
 - Using this command to create a new Ruby on Rails app generates a base file structure
 - `$ rails db:create`
