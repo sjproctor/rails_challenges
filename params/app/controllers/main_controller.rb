@@ -1,27 +1,31 @@
 class MainController < ApplicationController
   def cubed
-    @number = params[:number].to_i ** 3
+    @number = params[:number].to_i**3
   end
+
   def evenly
     num1 = params[:number1].to_i
     num2 = params[:number2].to_i
-    if num1 % num2 == 0
-      @output = "#{num1} is evenly divisible by #{num2}."
-    else
-      @output = "#{num1} is not evenly divisible by #{num2}."
-    end
+    @output = if (num1 % num2).zero?
+                "#{num1} is evenly divisible by #{num2}."
+              else
+                "#{num1} is not evenly divisible by #{num2}."
+              end
   end
+
   def length
     @word = params[:word]
   end
+
   def palindrome
     word = params[:word]
-    if word.downcase == word.reverse.downcase
-      @output = "#{word} is a palindrome"
-    else
-      @output = "#{word} is not a palindrome"
-    end
+    @output = if word.downcase == word.reverse.downcase
+                "#{word} is a palindrome"
+              else
+                "#{word} is not a palindrome"
+              end
   end
+
   def madlib
     adjective = params[:adjective]
     animal = params[:animal]
